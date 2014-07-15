@@ -15,7 +15,7 @@ Requirements
 ============
 
  * A Raspberry Pi (I've only tested model B as of late 2013)
- * [Dual female jumper wires][jumper] to connect GPIO pins to WRT
+ * [Dual female jumper wires][jumper] to connect GPIO pins to the board
  * Pins soldered on the JTAG header of the target device
  * Beverege to enjoy afterward
 
