@@ -23,13 +23,13 @@ Setup
 =====
 
  1. Hook up the two boards as per the diagram in `wiring.jpg`
- 2. Optionally, bridge the GPIO8 pin on the RPI to the nTRST pin on your device.
+ 2. Optionally, bridge GPIO8 pin on the Pi to the nTRST pin on your device.
  3. Power up your WRT
  4. Checkout the code, compile and run it
 
         $ cd ~
-        $ git clone git@github.com:oxplot/tjtag-pi.git
-        $ cd tjtag-pi
+        $ git clone https://github.com/kissg1988/tjtag-pi2.git
+        $ cd tjtag-pi2
         $ make pi
         $ ./tjtag -probeonly
 
