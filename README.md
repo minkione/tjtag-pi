@@ -1,6 +1,6 @@
 tjtag-pi2 is a slightly modified version of [tjtag-pi][tjtag-pi] which adds support for the nTRST pin used on some devices.
 
-Tested on an Atheros AR531X board with EJTAG 2.6 interface - the code working fine, both the device and the flash chip is available through the JTAG interface.
+Tested on an Atheros AR531X board with EJTAG 2.6 interface - works fine, both the device and the flash chip is detected through the JTAG interface.
 
 WARNING
 =======
