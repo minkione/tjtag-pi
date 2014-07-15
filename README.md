@@ -16,15 +16,15 @@ Requirements
 
  * A Raspberry Pi (I've only tested model B as of late 2013)
  * [Dual female jumper wires][jumper] to connect GPIO pins to WRT
- * Pins soldered on the JTAG header on WRT
+ * Pins soldered on the JTAG header of the target device
  * Beverege to enjoy afterward
 
 Setup
 =====
 
  1. Hook up the two boards as per the diagram in `wiring.jpg`
- 2. Optionally, bridge GPIO8 pin on the Pi to the nTRST pin on your device.
- 3. Power up your WRT
+ 2. Optionally, bridge GPIO8 pin on the Pi to the nTRST pin on your device
+ 3. Power up your device
  4. Checkout the code, compile and run it
 
         $ cd ~
@@ -37,7 +37,7 @@ Setup
 
 If at this point, your SoC and flash is recognized, you're all set.
 Enjoy your beverage and look for an appropriate guide that explains how
-to use tjtag to revive/upgrade your router's firmware.
+to use tjtag to revive/upgrade your device's firmware.
 
 Notes
 =====
