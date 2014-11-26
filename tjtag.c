@@ -527,16 +527,18 @@ void lpt_openport(void)
    // Always use volatile pointer!
    gpio = (volatile unsigned *) gpio_map;
 
-   // Set TDO as input and TMS,TCK and TDI as output
+   // Set TDO as input and TMS,TCK,NTRST and TDI as output
    
    INP_GPIO(TDO);
    INP_GPIO(TMS);
    INP_GPIO(TCK);
    INP_GPIO(TDI);
+   INP_GPIO(NTRST);
 
    OUT_GPIO(TMS);
    OUT_GPIO(TCK);
    OUT_GPIO(TDI);
+   OUT_GPIO(NTRST);
 
 #else
 
@@ -626,7 +628,7 @@ static unsigned char clockin(int tms, int tdi)
 
 #ifdef RASPPI
 
-    data = (tms << TMS) | (tdi << TDI);
+    data = (tms << TMS) | (tdi << TDI) | (1 << NTRST);
     GPIO_CLR = (1 << TCK) | (1 << TMS) | (1 << TDI);
     GPIO_SET = data;
     cable_wait();

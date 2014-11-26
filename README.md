@@ -1,5 +1,6 @@
-tjtag-pi is a fork of [tjtag][] with support for [Raspberry Pi][pi]
-which eliminates the need for a PC with parallel port.
+tjtag-pi2 is a slightly modified version of [tjtag-pi][tjtag-pi] which adds support for the nTRST pin used on some devices.
+
+Tested on an Atheros AR531X board with EJTAG 2.6 interface - works fine, both the device and the flash chip is detected through the JTAG interface.
 
 WARNING
 =======
@@ -14,20 +15,21 @@ Requirements
 ============
 
  * A Raspberry Pi (I've only tested model B as of late 2013)
- * [Dual female jumper wires][jumper] to connect GPIO pins to WRT
- * Pins soldered on the JTAG header on WRT
+ * [Dual female jumper wires][jumper] to connect GPIO pins to the board
+ * Pins soldered on the JTAG header of the target device
  * Beverege to enjoy afterward
 
 Setup
 =====
 
  1. Hook up the two boards as per the diagram in `wiring.jpg`
- 2. Power up your WRT
- 3. Checkout the code, compile and run it
+ 2. Optionally, bridge GPIO8 pin on the Pi to the nTRST pin on your device
+ 3. Power up your device
+ 4. Checkout the code, compile and run it
 
         $ cd ~
-        $ git clone git@github.com:oxplot/tjtag-pi.git
-        $ cd tjtag-pi
+        $ git clone https://github.com/kissg1988/tjtag-pi2.git
+        $ cd tjtag-pi2
         $ make pi
         $ ./tjtag -probeonly
 
@@ -35,7 +37,7 @@ Setup
 
 If at this point, your SoC and flash is recognized, you're all set.
 Enjoy your beverage and look for an appropriate guide that explains how
-to use tjtag to revive/upgrade your router's firmware.
+to use tjtag to revive/upgrade your device's firmware.
 
 Notes
 =====
@@ -51,5 +53,5 @@ Notes
    `&> /dev/null`), after having made sure everything works OK.
 
 [jumper]: http://www.seeedstudio.com/depot/1-pin-dualfemale-jumper-wire-100mm-50pcs-pack-p-260.html?cPath=44
-[tjtag]: http://sourceforge.net/projects/tjtag/
+[tjtag-pi]: https://github.com/oxplot/tjtag-pi/
 [pi]: http://www.raspberrypi.org/
